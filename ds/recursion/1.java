@@ -1,3 +1,4 @@
+//  print fibonacci number
 public class Main
 {
     static int fact(int n){
@@ -14,3 +15,27 @@ public class Main
 		//112358
 	}
 }
+
+// print permutaion of string
+public class Main
+{
+    
+    public static void permu(String str, String permutation){
+        if(str.length()== 0){
+            System.out.println(permutation);
+            return;
+        }
+        for(int i =0;i<str.length();i++){
+            char currChar = str.charAt(i);
+            String newStr = str.substring(0,i) + str.substring(i+1);
+            permu(newStr, permutation+currChar);
+        }
+        
+    }
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		String s = "abc";
+		permu(s, "");
+	}
+}
+
