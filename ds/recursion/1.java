@@ -56,3 +56,17 @@ public class Main
 		System.out.println(countPath(3,3));
 	}
 }
+
+//count no.of steps to get to 1 from given integer n
+public class Main{
+    public static int count(int n)
+    {
+        if(n==1){return 0;}
+        if(n%2==0){return 1 + count(n/2);}
+        else{ return 1 + count(3*n+1); }
+    }
+	public static void main(String[] args) {
+        int n = 4;
+        System.out.println(count(n));
+	}
+}
