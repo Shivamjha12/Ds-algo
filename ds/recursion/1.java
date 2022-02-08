@@ -39,3 +39,20 @@ public class Main
 	}
 }
 
+// no.of paths to end point of matrix
+
+public class Main
+{
+    
+    public static int countPath(int n, int m){
+        if(n==1 || m==1){
+            return 1;
+        }
+        return countPath(n-1,m)+countPath(n,m-1);
+        
+    }
+	public static void main(String[] args) {
+// 		int n,m = 3,3;
+		System.out.println(countPath(3,3));
+	}
+}
