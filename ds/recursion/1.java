@@ -70,3 +70,14 @@ public class Main{
         System.out.println(count(n));
 	}
 }
+
+// no.of ways to place tiles in area of m*n when given tiles of area m*1
+
+public static int placeTiles(int n,int m){
+	if(m==n){ return 2};
+	if(m>n){return 1};
+	int vertPlace = placeTiles(n-m,m);
+	int horzPlace = placeTiles(n-1,n);
+	return vertPlace + horzPlac;
+}
+}
