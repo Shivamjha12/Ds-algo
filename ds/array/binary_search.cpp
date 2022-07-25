@@ -15,3 +15,26 @@ int binary_s(int a[],int l,int r, int target){
     }
   return -1;
 }
+
+// binary_searching using while loop aproach
+
+int binary_s(int a[], int left, int right, int target) {
+        
+        while(left<=right)
+        {
+            int mid=left+(right-left)/2;
+            if(target==a[mid])
+            {
+                return mid;
+            }
+            if(target<a[mid])
+            {
+                right=mid-1;
+            }
+            else
+            {
+                left=mid+1;
+            }
+        }
+        return -1;
+    }
