@@ -38,3 +38,27 @@ int binary_s(int a[], int left, int right, int target) {
         }
         return -1;
     }
+
+// binary search in binary sorted array [0,0,0,1,1,1,1] to find first occurance position of 1 in array
+
+int binsr(vector<int>arr,int l, int r)
+    {
+        if(l<=r)
+        {
+            int mid = (l+r)>>1;
+            if((mid==0 || arr[mid-1]==0) && arr[mid]==1)
+            {
+                return mid;
+            }
+            else if(arr[mid]==0)
+            {
+                return binsr(arr,mid+1,r);
+            }
+            else
+            {
+                return binsr(arr,l,mid-1);
+            }
+        }
+        return -1;
+    }
+
