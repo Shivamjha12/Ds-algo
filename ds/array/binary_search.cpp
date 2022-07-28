@@ -62,3 +62,56 @@ int binsr(vector<int>arr,int l, int r)
         return -1;
     }
 
+// BOOK ALLOCATION CODE BINARY SEARCH
+
+int is_possible(int a[], int n,int m, int mid)
+    {
+        int students=1;
+        int sum=0;
+        for(int i=0;i<n;i++)
+        {
+            if (a[i] > mid)
+            return false;
+            
+            if(sum+a[i] >mid)
+            {
+                students++;
+                sum=a[i];
+                
+                if(students>m) return false;
+                
+            }
+            else
+            {
+                sum+=a[i];
+            }
+        }
+        return true;
+        
+    }
+
+int findPages(int A[], int N, int M) 
+    {
+        //code here
+        if (N < M){ return -1; }
+        int result = -1;
+        int low= *max_element(A,A+N);
+        int high = accumulate(A,A+N,0);
+        while(low<=high)
+        {
+            int mid = low + ((high-low)>>1);
+            if(is_possible(A,N,M,mid))
+            {
+                result = mid;
+                high = mid-1;
+            }
+            else
+            {
+                low=mid+1;
+            }
+        }
+        return result;
+    }
+
+
+
