@@ -63,6 +63,27 @@ void generate( string &s, int open, int close )
 
     }
 
+vector<vector<int>> subs;
+void g_subsets(vector<int> &a, int i, vector<int> &nums)
+    {
+        cout<<i<<"\n";
+        for(auto i:a)
+        {
+        cout<<i<<" ";
+        }
+        cout<<"\n";
+        if(i==nums.size())
+        {
+            subs.push_back(a);
+            return;
+        }
+        g_subsets(a,i+1,nums);
+        a.push_back(nums[i]);
+        g_subsets(a,i+1,nums);
+        a.pop_back();
+        
+    }
+
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
@@ -72,11 +93,6 @@ int main(){
     #endif
     int n;
     cin>>n;
-    // int a[n];
-    // for(int i=0;i<n;i++)
-    // {
-    //     cin>>a[i];
-    // }
     string s="";
     generate(s,n,n);
     for(int i=0;i<ans.size();i++)
