@@ -27,3 +27,4 @@ print(mmo(a1))
 print(mmo(a3))
         
     
+# we used left sum and right sum, two pointers approach to solve this problem
