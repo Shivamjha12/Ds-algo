@@ -14,7 +14,7 @@ int power(int a,int b){
 }
 int32_t main()
 {
-   // calculate the power of even numbers
+   // calculate the power of number --> power(number,power of number);
 	int ans = power(2,4);
 	cout<<ans<<"\n";
 
