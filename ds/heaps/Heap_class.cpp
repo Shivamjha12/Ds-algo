@@ -7,21 +7,21 @@ class Minheap{
     size=0;
     capacity = k;
   }
+  // method to find leftIndex
   int leftIndex(int i){ return (2*i+1); }
+  // method to find rightIndex
   int rightIndex(int i){ return (2*i+1); }
+  // method to find parentIndex
   int parentIndex(int i){ return (i-1)/2 ;}
-  
+  // heapify method
   void heapify(int arr[], int n, int i)  
     {
-      // Your Code Here
       int li = leftc(i), ri=rightc(i);
       int smallest = i;
       if(li<n && arr[li)] < arr[smallest]){
-        //   swap(arr[left(i)], arr[i]);
           smallest = li;
       }
       if(ri<n && arr[ri] < arr[smallest]){
-        //   swap(arr[left(i)], arr[i]);
           smallest = ri;
       }
       if(smallest !=i){
@@ -29,7 +29,7 @@ class Minheap{
           heapify(smallest);
       }
     }
-  
+  // method to insert new node/value in heap
   void insert(int value){
     size++;
     arr[size-1]=value;
