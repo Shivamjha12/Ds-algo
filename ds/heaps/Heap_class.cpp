@@ -2,11 +2,13 @@ class Minheap{
   int size=0;
   int capacity;
   int arr[];
+  
   Minheap(int k){
     arr = new Array(capacity);
     size=0;
     capacity = k;
   }
+  public:
   // method to find leftIndex
   int leftIndex(int i){ return (2*i+1); }
   // method to find rightIndex
