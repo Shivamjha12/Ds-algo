@@ -33,7 +33,7 @@ class Minheap{
   void insert(int value){
     size++;
     arr[size-1]=value;
-    for(int i=size-1;arr[parentIndex(i)]>arr[i] && i>0){
+    for(int i=size-1;arr[parentIndex(i)]>arr[i] && i!=0){
       swap(arr[parentIndex(i)],arr[i]);
       i=parentIndex(i);
     }
