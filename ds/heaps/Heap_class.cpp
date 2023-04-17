@@ -68,7 +68,8 @@ class Minheap{
     }
   }
   // method to delete a particular node from a heap
-  void deleteNode(int i){
+  // To create a delete key/Node method(), we have to first build heapify,decreasekey and extractMin methods to perform 'deletekey' method *_*
+  void deletekey(int i){
     decreaseKey(i,INT_MIN);
     extractMin();
   }
