@@ -73,6 +73,11 @@ class Minheap{
     decreaseKey(i,INT_MIN);
     extractMin();
   }
+  void buildHeap(int n){
+    for(int i=(n/2)-1;i>=0;i--){
+      heapify(parentIndex(i));
+    }
+  }
   
   
 }
