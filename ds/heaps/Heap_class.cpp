@@ -33,11 +33,24 @@ class Minheap{
   void insert(int value){
     size++;
     arr[size-1]=value;
-    for(int i=size-1;arr[parentIndex(i)]>arr[i] && i!=0){
-      swap(arr[parentIndex(i)],arr[i]);
-      i=parentIndex(i);
+      for(int i=size-1;arr[parentIndex(i)]>arr[i] && i!=0){
+        swap(arr[parentIndex(i)],arr[i]);
+        i=parentIndex(i);
+      }
     }
+  // method to get the minimun element of Minheap
+  int getMin()
+  {
+    return arr[0];
+  }
+  // this method help to take out minimum element of heap
+  void extractMin(){
+    swap(arr[0],arr[size-1]);
+    size--;
+    heapify(arr,size,0);
     
   }
+  
+  
   
 }
