@@ -43,11 +43,18 @@ class Minheap{
   {
     return arr[0];
   }
-  // this method help to take out minimum element of heap
-  void extractMin(){
+  // this method help to take out minimum element of heap and modify the heap with new min element at top by deleting current min element and updating new smallest value element on top of heap.
+  int extractMin(){
+    if(size==0) return INT_MAX;
+    if(size==1)
+    {
+      return arr[0];
+      size--;
+    }
     swap(arr[0],arr[size-1]);
     size--;
     heapify(arr,size,0);
+    return arr[size];
     
   }
   
