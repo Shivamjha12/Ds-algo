@@ -59,7 +59,19 @@ class Minheap{
     return arr[size];
     
   }
-  
+  // method to change value of any partcular node and modify the heap
+  void decreaseKey(int i,int value){
+    arr[i]=value;
+    while(i!=0 && arr[parentIndex(i)]>arr[i]{
+      swap(arr[i],arr[parentIndex[i]);
+      i=parentIndex(i);
+    }
+  }
+  // method to delete a particular node from a heap
+  void deleteNode(int i){
+    decreaseKey(i,INT_MIN);
+    extractMin();
+  }
   
   
 }
